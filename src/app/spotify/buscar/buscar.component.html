@@ -1,0 +1,16 @@
+<form action="">
+    <div class="input-group my-3">
+        <input class="text-primary" type="text" class="form-control" (keyup) = "onSearch($event)" placeholder="Search"
+         aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="name" name="first" >       
+      </div>
+</form>
+
+<div class="card-columns mt-3">
+        <div class="card" *ngFor = "let album of albums">
+            <img  class="card-img-top" [src]="album.images[0] | noImage : album.images.length > 0" alt="Card image cap" (click) = "verArtista(album.id)">
+            <div class="card-body">
+            <h5 class="card-title">{{album.name}}</h5>
+            <span class="badge badge-primary mr-2" *ngFor = "let artist of album.artists">{{artist.name}}</span>
+            </div>
+        </div> 
+    </div>

@@ -1,0 +1,14 @@
+.artista {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+h2 , th , td {
+    color: white;
+}
+
+.imageAlbum {
+    width: 65px;
+    height: 65px;
+}

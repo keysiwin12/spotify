@@ -1,0 +1,33 @@
+<div class="col-md-12 mt-5">
+    <div class="row">
+          <div class="col-md-3">
+                <img [src]="imagen" alt="" class="artista">
+            </div>
+        
+            <div class="col-md-3 text-center">
+                <h2>{{name}}</h2>
+                <a href="https://open.spotify.com/artist/{{id}}" target="_blank" >Ir a la página del artista</a>
+            </div>
+            <div class="col-md-2 offset-md-4">
+                <button class="btn btn-outline-danger" (click)= "regresar()">Regresar</button>
+            </div>
+    </div>
+    <div class="row mt-3">
+        <table class="table">
+            <thead class="text-center">
+                <th *ngFor = "let header of headersTable">{{header}}</th>
+            </thead>
+
+            <tbody>
+                <tr *ngFor = "let track of tracks" class="text-center">
+                    <td><img class="imageAlbum" [src]="track.album.images[0].url" alt=""></td>
+                    <td>{{track.album.name}}</td>
+                    <td>{{track.name}}</td>
+                    <td><audio [src]="track.preview_url" controls></audio></td>
+                    <!-- <td><iframe [src]="track.uri" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe></td> -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
